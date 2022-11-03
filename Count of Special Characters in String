@@ -1,0 +1,31 @@
+package stringsInJava;
+
+public class SpecialCharacters {
+
+	public static void main(String[] args) {
+		String s = "G#!qT@";
+		int count =0;
+		String specialCharacterRemoved ="";
+		for(int i=0; i<=s.length()-1; i++)
+		{
+			if(!Character.isDigit(s.charAt(i)) && !Character.isLetter(s.charAt(i)) && !Character.isWhitespace(s.charAt(i)))
+			{
+				count ++;
+			}
+			else {
+				specialCharacterRemoved = specialCharacterRemoved + s.charAt(i);
+			}
+		}
+		if(count == 0)
+		{
+			System.out.println("There is no special characters in String");
+		}
+		else {
+			System.out.println("Special character found: " +count);
+		}
+		System.out.print("Special Character Removed: " +specialCharacterRemoved );
+	}
+
+}
+/* Special character found: 3
+   Special Character Removed: GqT */
