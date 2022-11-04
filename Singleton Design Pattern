@@ -1,0 +1,32 @@
+package twoClasses;
+
+public class Launch {
+	public static void main(String[] args) {
+		Dog d1= Dog.getInstance();
+		Dog d2= Dog.getInstance();
+		System.out.println(d1==d2);
+	}
+}
+package twoClasses;
+
+public class Dog {
+	private static Dog d;
+	private String breed;
+	private float age;
+	private float price;
+	
+	private Dog()
+	{
+		breed = "pug";
+		age = 4.5f;
+		price = 7777;
+	}
+	public static Dog getInstance()
+	{
+		if(d == null)
+		{
+			d = new Dog();
+		}
+		return d;
+	}
+}
