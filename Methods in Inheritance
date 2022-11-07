@@ -1,0 +1,105 @@
+// Vehicle Hirarchy
+
+class Car
+{
+    void start()
+    {
+        System.out.println("Car is started");
+    }
+    void accelerate()
+    {
+        System.out.println("Car is accelerate at maximum Speed");
+    }
+    void drive()
+    {
+        System.out.println("Car is Driven by Shiffting the gears");
+    }
+    void stop()
+    {
+        System.out.println("Car is stopped");
+    }
+}
+class Maruti800 extends Car
+{
+    void accelarate()
+    {
+        System.out.println("Maruti800 accelarate at speed of 150 km");
+    }
+    void drive()
+    {
+        System.out.println("Maruti800 having manual shift Gears");
+    }
+    void combustion()
+    {
+        System.out.println("Maruti800 having Petrol Engine");
+    }
+}
+class Innova extends Car
+{
+    void accelarate()
+    {
+        System.out.println("Innova accelarate at speed of 200 km");
+    }
+    void drive()
+    {
+        System.out.println("Innova having Automatic shift Gears");
+    }
+    void combustion()
+    {
+        System.out.println("Innova having Desel Engine");
+    }
+}
+class Ferrari extends Car
+{
+    void accelarate()
+    {
+        System.out.println("Ferrari accelarate at speed of 250 km");
+    }
+    void drive()
+    {
+        System.out.println("Ferrari having Turbo shift Gears");
+    }
+    void combustion()
+    {
+        System.out.println("Ferrari having White Petrol Engine");
+    }
+}
+class Launch
+{
+    public static void main(String[] args)
+    {
+        Maruti800 m = new Maruti800();
+        Innova i = new Innova();
+        Ferrari f = new Ferrari();
+        m.start();
+        m.accelarate();
+        m.drive();
+        m.combustion();
+        System.out.println();
+        i.start();
+        i.accelarate();
+        i.drive();
+        i.combustion();
+        System.out.println();
+        f.start();
+        f.accelarate();
+        f.drive();
+        f.combustion();
+    }
+}
+// OUTPUT
+
+Car is started
+Maruti800 accelarate at speed of 150 km
+Maruti800 having manual shift Gears
+Maruti800 having Petrol Engine
+
+Car is started
+Innova accelarate at speed of 200 km
+Innova having Automatic shift Gears
+Innova having Desel Engine
+
+Car is started
+Ferrari accelarate at speed of 250 km
+Ferrari having Turbo shift Gears
+Ferrari having White Petrol Engine
