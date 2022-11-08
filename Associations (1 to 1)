@@ -1,0 +1,75 @@
+// Dependency Injection
+// Dependent class
+package oneToOneAssociation;
+
+public class Account {
+	private int accNo;
+	private String accName;
+	private String accType;
+	public Account(int accNo, String accName, String accType) {
+		super();
+		this.accNo = accNo;
+		this.accName = accName;
+		this.accType = accType;
+	}
+	public int getAccNo() {
+		return accNo;
+	}
+	public String getAccName() {
+		return accName;
+	}
+	public String getAccType() {
+		return accType;
+	}
+}
+// Target class
+package oneToOneAssociation;
+
+public class Employee {
+	private int empId;
+	private String empName;
+	private String empAddr;
+	private Account acc;
+	public Employee(int empId, String empName, String empAddr, Account acc) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.empAddr = empAddr;
+		this.acc = acc;
+	}
+	public int getEmpId() {
+		return empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public String getEmpAddr() {
+		return empAddr;
+	}
+	public Account getAcc() {
+		return acc;
+	}
+	void disp()
+	{
+		System.out.println("Employee-ID :"+ empId);
+		System.out.println("Employee Name :" + empName);
+		System.out.println("Employee Address :"+ empAddr);
+		System.out.println("Employee's Account-No :"+ acc.getAccNo());
+		System.out.println("Employee's Account-Type :"+ acc.getAccType());
+		System.out.println("Employee's Account-Name :"+ acc.getAccName());
+	}
+
+}
+
+// Main Method
+package oneToOneAssociation;
+
+public class Launch {
+
+	public static void main(String[] args) {
+		Account a = new Account(1212, "Savings", "Sachin");
+		Employee emp = new Employee(18, "Vikki","Bangalore", a);
+		emp.disp();
+	}
+
+}
