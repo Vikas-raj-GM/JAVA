@@ -1,0 +1,68 @@
+package manyToManyAssociationWithConstructor;
+
+public class Project {
+	private int projectId;
+	private String projectName;
+	private String projectHR;
+	public Project(int projectId, String projectName, String projectHR) {
+		this.projectId = projectId;
+		this.projectName = projectName;
+		this.projectHR = projectHR;
+	}
+	public int getProjectId() {
+		return projectId;
+	}
+	public String getProjectName() {
+		return projectName;
+	}
+	public String getProjectHR() {
+		return projectHR;
+	}
+}
+
+package manyToManyAssociationWithConstructor;
+
+public class Employee {
+	private int empId;
+	private String empName;
+	private Project[] projects;
+	public Employee(int empId, String empName, Project... projects) {
+		this.empId = empId;
+		this.empName = empName;
+		this.projects = projects;
+	}
+	public void disp()
+	 {
+		 System.out.println("employee details:");
+		 System.out.println(empId);
+		 System.out.println(empName);
+		 System.out.println("project details:");
+		 for(Project ele:projects)
+		 {
+			 System.out.println(ele.getProjectId());
+			 System.out.println(ele.getProjectName());
+			 System.out.println(ele.getProjectHR());
+			 System.out.println(" ");
+			
+		 }
+	 }
+	
+}
+
+package manyToManyAssociationWithConstructor;
+
+public class Launch {
+	public static void main(String [] args)
+	{
+	
+		Project prj1 =new Project(12,"VL","Sachin");
+		Project prj2=new Project(13,"Xl","Roith");
+		Project prj3 =new Project(14,"ZX","Virat");
+		Employee emp1=new Employee(01,"Gill",prj1 ,prj2);
+		Employee emp2=new Employee(02,"S Kumar",prj1,prj3);
+		Employee emp3=new Employee(03,"Harshal",prj1,prj2,prj3);
+		emp1.disp();
+		emp2.disp();
+		emp3.disp();
+	}
+}
