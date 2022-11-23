@@ -16,9 +16,9 @@ public class ATM {
 	{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter Account Number :");
-		int ac = scan.nextInt();
+		ac = scan.nextInt();
 		System.out.println("Enter the Password :");
-		int pw = scan.nextInt();
+		pw = scan.nextInt();
 	}
 	public void verify() throws Exception
 	{
